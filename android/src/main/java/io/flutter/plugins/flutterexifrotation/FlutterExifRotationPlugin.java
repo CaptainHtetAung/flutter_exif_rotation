@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.provider.MediaStore;
+import android.util.Log;
 
 import androidx.core.app.ActivityCompat;
 
@@ -138,6 +139,7 @@ public class FlutterExifRotationPlugin implements MethodCallHandler, PluginRegis
             orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION,
                     ExifInterface.ORIENTATION_UNDEFINED);
 
+            Log.w("Exif Info ",ei.toString());
 
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inPreferredConfig = Bitmap.Config.ARGB_8888;
